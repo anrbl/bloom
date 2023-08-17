@@ -1,0 +1,130 @@
+.footer {
+    padding: 100px 0;
+    background: $c-2;
+
+    .ft {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 72px 0;
+
+        .foot_customer {
+            display: flex;
+            gap: 30px;
+
+            li {
+                position: relative;
+
+                &:not(:first-child) {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: -15px;
+                        transform: translate(0, -50%);
+                        width: 1px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background: $c-6;
+                        opacity: 60%;
+                    }
+                }
+
+                a {
+                    display: block;
+                    font-size: 18px;
+                    font-weight: 300;
+                    color: $c-wb;
+                    white-space: nowrap;
+
+                    &.strong {
+                        color: $c-sub;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .foot_sns {
+            display: flex;
+            gap: 10px;
+
+            i {
+                display: block;
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                color: $c-w;
+                font-size: 20px;
+                border: 1px solid rgba($color: $c-w, $alpha: 0.5);
+                border-radius: 50%;
+            }
+        }
+
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: $c-6;
+            opacity: 50%;
+        }
+    }
+
+    .foot_address {
+        color: $c-g;
+
+        li {
+            line-height: 24px;
+
+            a {
+                display: inline-block;
+                color: $c-sub;
+            }
+
+            &.copy {
+                font-size: 14px;
+                color: $c-9;
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .footer {
+        padding: 70px 0 60px 0;
+
+        .inner {
+            padding: 0 24px;
+        }
+
+        .ft {
+            flex-direction: column-reverse;
+            gap: 32px;
+            margin: 0 0 64px;
+
+            .foot_customer {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+
+                li {
+                    &:not(:first-child) {
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            &::after {
+                bottom: -32px;
+            }
+        }
+    }
+}

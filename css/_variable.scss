@@ -1,0 +1,43 @@
+//variable
+
+$c-w : #fff;
+$c-wb : #f7f8f9;
+$c-line : #f2f2f2;
+$c-g : #ddd;
+$c-9 : #999;
+$c-6 : #666;
+$c-4 : #444;
+$c-3 : #333;
+$c-2 : #222;
+$c-b : #000;
+$c-main : #b7cce7;
+$c-sub : #7baffd;
+$c-sub-pink: #f8c0b2;
+$c-sub-green: #9b996c;
+$c-sub-purple: #d6c5e0;
+
+$max : 1440px;
+
+
+//mixin
+@mixin inner () {
+    max-width: $max;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+@mixin center () {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin blind () {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
