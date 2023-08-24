@@ -112,6 +112,7 @@ $(function () {
         slidesPerView: 1,
         spaceBetween: 0,
         speed: 700,
+        slideActiveClass: 'on',
         mousewheel: true,
         effect: "creative",
         creativeEffect: {

@@ -920,7 +920,7 @@ body {
   color: #7baffd;
   border-radius: 50%;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
-  transition: 0.5s;
+  transition: 0.2s;
 }
 .main_bouquet .inner .bouquet_slide .itm .desc {
   padding: 0 16px 0 0;
@@ -1063,6 +1063,8 @@ body {
   width: 780px;
   border-radius: 0 0 0 50px;
   filter: brightness(110%);
+  opacity: 0;
+  transition: 0.5s 0.3s;
 }
 .main_collection .theme::after {
   content: "";
@@ -1070,11 +1072,14 @@ body {
   bottom: 60px;
   right: 530px;
   z-index: 2;
+  transform: translate(50px, 0);
   width: 320px;
   height: 500px;
   border-radius: 10px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   filter: brightness(110%);
+  opacity: 0;
+  transition: 0.5s 0.5s;
 }
 .main_collection .theme.th1 {
   background: #d6c5e0;
@@ -1102,6 +1107,13 @@ body {
 }
 .main_collection .theme.th3::after {
   background: url(../images/col_Millie1.jpg) no-repeat center center/cover;
+}
+.main_collection .theme.on::before {
+  opacity: 1;
+}
+.main_collection .theme.on::after {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 .main_collection .page_num {
   position: absolute;
@@ -1541,7 +1553,7 @@ body {
 }
 .side .side_serv {
   position: absolute;
-  top: 100px;
+  top: 116px;
   right: 0;
   z-index: 1000;
 }
