@@ -411,16 +411,16 @@ body {
 .main_visual .main_slide .itm.itm04 {
   background: url(../images/mainVisual04.jpg) center center/cover;
 }
-.main_visual .slogan {
+.main_visual .main_slide .itm .slogan {
   position: absolute;
   bottom: 250px;
   left: 250px;
   z-index: 100;
 }
-.main_visual .slogan .txt {
+.main_visual .main_slide .itm .slogan .txt {
   margin: 0 0 48px 0;
 }
-.main_visual .slogan h3 {
+.main_visual .main_slide .itm .slogan h3 {
   font-size: 72px;
   font-weight: 700;
   text-indent: -2px;
@@ -430,16 +430,22 @@ body {
   width: 788px;
   font-family: "Playfair Display SC";
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: translate(0, 70px);
+  opacity: 0;
 }
-.main_visual .slogan p {
+.main_visual .main_slide .itm .slogan p {
   display: inline-block;
   padding: 5px 8px 4px 8px;
   background: #fff;
+  transform: translate(0, 70px);
+  opacity: 0;
 }
-.main_visual .slogan a {
+.main_visual .main_slide .itm .slogan a {
   display: inline-block;
+  transform: translate(0, 70px);
+  opacity: 0;
 }
-.main_visual .slogan a span {
+.main_visual .main_slide .itm .slogan a span {
   position: relative;
   display: flex;
   align-items: center;
@@ -448,7 +454,7 @@ body {
   font-weight: 300;
   color: #fff;
 }
-.main_visual .slogan a span::before {
+.main_visual .main_slide .itm .slogan a span::before {
   content: "\e941";
   font-family: "material symbols outlined";
   display: inline-block;
@@ -461,7 +467,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 50%;
 }
-.main_visual .slogan a span::after {
+.main_visual .main_slide .itm .slogan a span::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -489,12 +495,38 @@ body {
     border: 1px solid rgba(255, 255, 255, 0);
   }
 }
+.main_visual .main_slide .itm.on .slogan h3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  transition: 0.3s 0.2s;
+}
+.main_visual .main_slide .itm.on .slogan p {
+  transform: translate(0, 0);
+  opacity: 1;
+  transition: 0.3s 0.4s;
+}
+.main_visual .main_slide .itm.on .slogan a {
+  transform: translate(0, 0);
+  opacity: 1;
+  transition: 0.3s 0.6s;
+}
+.main_visual .main_slide::after {
+  content: "";
+  position: absolute;
+  bottom: 190px;
+  right: 0;
+  left: 333px;
+  height: 1px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+}
 .main_visual .mv_arrow {
   position: absolute;
   bottom: 150px;
-  right: 60px;
+  right: 64px;
   z-index: 900;
   display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 .main_visual .mv_arrow li {
@@ -597,44 +629,48 @@ body {
   .main_visual .main_slide .itm.itm04 {
     background: url(../images/mainVisual04.jpg) 45% bottom/cover;
   }
-  .main_visual .main_slide::after {
-    display: none;
-  }
-  .main_visual .slogan {
+  .main_visual .main_slide .itm .slogan {
     bottom: 90px;
     left: 24px;
     right: 24px;
   }
-  .main_visual .slogan .txt {
+  .main_visual .main_slide .itm .slogan .txt {
     margin: 0 0 80px 0;
     text-align: center;
   }
-  .main_visual .slogan h3 {
+  .main_visual .main_slide .itm .slogan h3 {
     font-size: 40px;
     color: #fff;
     padding: 0 16px;
     width: auto;
   }
-  .main_visual .slogan p {
+  .main_visual .main_slide .itm .slogan p {
     padding: 0;
     background: none;
     color: #ddd;
     padding: 0 32px;
   }
-  .main_visual .slogan a span {
+  .main_visual .main_slide .itm .slogan a {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  .main_visual .main_slide .itm .slogan a span {
     gap: 24px;
     font-size: 16px;
   }
-  .main_visual .slogan a span::before {
+  .main_visual .main_slide .itm .slogan a span::before {
     font-size: 32px;
     width: 60px;
     height: 60px;
     line-height: 60px;
     text-align: center;
   }
-  .main_visual .slogan a span::after {
+  .main_visual .main_slide .itm .slogan a span::after {
     width: 60px;
     height: 60px;
+  }
+  .main_visual .main_slide::after {
+    display: none;
   }
   .main_visual .mv_arrow {
     bottom: 100px;
@@ -683,26 +719,29 @@ body {
   position: relative;
 }
 .main_towork .inner {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  gap: 100px;
-  max-width: 1610px;
-  margin: 20px auto -20px 70px;
+  max-width: 1560px;
 }
 .main_towork .inner .title {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-start;
+  position: relative;
+  margin: 0 0 56px 0;
 }
 .main_towork .inner .title h3 {
-  writing-mode: vertical-lr;
-  margin: 0 0 0 4px;
+  font-size: 56px;
+  margin: 0 0 4px 0;
 }
 .main_towork .inner .title p {
-  writing-mode: vertical-lr;
   font-size: 15px;
   color: #444;
+}
+.main_towork .inner .title::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 80px;
+  height: 100%;
+  background: url(../images/flower.svg) no-repeat;
 }
 .main_towork .workcard {
   display: grid;
@@ -710,7 +749,7 @@ body {
   gap: 40px;
 }
 .main_towork .workcard li {
-  padding: 40px 40px 60px 40px;
+  padding: 32px 32px 56px 32px;
   border: 2px solid #7baffd;
   border-radius: 30px 0;
   background: #fff;
@@ -768,7 +807,7 @@ body {
 }
 .main_towork .text_loop span {
   display: block;
-  font-size: 6vw;
+  font-size: 5.5vw;
   font-family: "Playfair Display SC";
   white-space: nowrap;
   color: #f2f2f2;
@@ -794,11 +833,15 @@ body {
   }
   .main_towork .inner .title h3 {
     writing-mode: horizontal-tb;
+    font-size: 32px;
     margin: 0 0 8px 0;
   }
   .main_towork .inner .title p {
     writing-mode: horizontal-tb;
     font-size: 16px;
+  }
+  .main_towork .inner .title::before {
+    display: none;
   }
   .main_towork .workcard {
     grid-template-columns: repeat(2, 1fr);
@@ -1039,15 +1082,6 @@ body {
 .main_collection {
   position: relative;
 }
-.main_collection .swiper {
-  width: 100%;
-  height: 100%;
-}
-.main_collection .swiper-slide {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-}
 .main_collection .theme {
   position: relative;
   z-index: 990;
@@ -1108,10 +1142,10 @@ body {
 .main_collection .theme.th3::after {
   background: url(../images/col_Millie1.jpg) no-repeat center center/cover;
 }
-.main_collection .theme.on::before {
+.main_collection .theme.active::before {
   opacity: 1;
 }
-.main_collection .theme.on::after {
+.main_collection .theme.active::after {
   transform: translate(0, 0);
   opacity: 1;
 }
@@ -1221,34 +1255,6 @@ body {
 }
 .main_collection .sub_collection figure:hover {
   transform: translate(0, -10px);
-}
-.main_collection .collection_page {
-  position: absolute;
-  top: 150px;
-  left: 300px;
-  z-index: 990;
-  width: auto;
-  height: 80px;
-  display: flex;
-  gap: 30px;
-}
-.main_collection .collection_page .swiper-pagination-bullet {
-  width: 60%;
-  background: transparent;
-  opacity: 45%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  cursor: pointer;
-}
-.main_collection .collection_page .swiper-pagination-bullet span {
-  font-size: 14px;
-  font-weight: 300;
-  color: #fff;
-  letter-spacing: 2px;
-}
-.main_collection .collection_page .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  opacity: 100%;
 }
 .main_collection .col_arrows {
   position: absolute;

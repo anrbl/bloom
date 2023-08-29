@@ -1,35 +1,76 @@
 $(function () {
-    $('._fullpage').fullpage({
+
+    var sNap = false;
+    var secL = $(".section").length;
+    var sEc = $(".section");
+    var selI;
+
+    sEc.eq(0).addClass("on");
+    $('#fullpage').fullpage({
+        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+
+        controlArrows: false, //슬라이드 화살표 숨김
+        loopHorizontal: false, //슬라이드 반복 멈춤
+
+        scrollingSpeed: 800,
+
         anchors: ['main', 'sec1', 'sec2', 'sec3', 'foot'],
         scrollHorizontally: true,
         scrollOverflow: true,
-        scrollingSpeed: 700,
 
         navigation: false,
-        css3: false,
         responsiveWidth: 768,
         responsiveHeight: 800,
 
-        onLeave: function (idx, nidx, dir) {
+
+        afterLoad: function (origin, destination, idx, nidx) {
+            sNap = false;
+            sEc.eq(destination.index).addClass("on").siblings().removeClass("on");
+        },
+        onLeave: function (origin, destination, direction, trigger, idx, nidx) {
             console.log(idx, nidx)
-            if (nidx == '2') {
+
+            if (origin.index == 0 && direction == 'down') {
                 $('.header').addClass('on')
                 $('.side').addClass('on')
-            } else if (nidx == '3') {
+            } else if (origin.index == 1 && direction == 'down') {
                 $('.header').addClass('on')
                 $('.side').addClass('on')
-            } else if (nidx == '5') {
+            } else if (origin.index == 2 && direction == 'up') {
+                $('.header').addClass('on')
+                $('.side').addClass('on')
+            } else if (origin.index == 3 && direction == 'down') {
+                $('.header').addClass('on')
+                $('.side').removeClass('on')
+            } else if (origin.index == 3 && direction == 'up') {
                 $('.header').addClass('on')
                 $('.side').removeClass('on')
             } else {
                 $('.header').removeClass('on')
                 $('.side').removeClass('on')
             }
+
             $('.side_nav li').eq(nidx - 1).addClass('on').siblings().removeClass('on');
+
+            sNap = true;
         }
-
-
     });
+
+    $("#slide").on("wheel touchmove", function (e) {
+        if (e.originalEvent.deltaY < 0) {
+            fullpage_api.moveSlideLeft();
+        }
+        else {
+            fullpage_api.moveSlideRight();
+        }
+    });
+
+    $('.col_arrows .left').on('click', function (c, e, s) {
+        fullpage_api.moveSlideLeft();
+    })
+    $('.col_arrows .right').on('click', function () {
+        fullpage_api.moveSlideRight();
+    })
 
     $('.main_slide').on('init afterChange', function (e, s, c) {
         const current = $('.main_slide .slick-current');
@@ -66,7 +107,7 @@ $(function () {
         autoplaySpeed: 0,
         slidesToShow: 1,
         slidesToScroll: 1,
-        speed: 15000,
+        speed: 18000,
         pauseOnFocus: false,
         pauseOnHover: false,
         cssEase: 'linear'
@@ -106,49 +147,6 @@ $(function () {
 
 
 
-    var length = $(".sec3 .swiper-slide").length;
-    var bullet = ['Jane', 'Taylor', 'Millie'];
-    const Trend = new Swiper('.collection_slide', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        speed: 700,
-        slideActiveClass: 'on',
-        mousewheel: true,
-        effect: "creative",
-        creativeEffect: {
-            prev: {
-                shadow: false,
-                translate: ["-20%", 0, -1],
-            },
-            next: {
-                translate: ["100%", 0, 0],
-            },
-        },
-        pagination: {
-            el: '.collection_page',
-            clickable: true,
-            renderBullet: function (index, className) {
-                return '<div class="' + className + '"><span>' + (bullet[index]) + '</span></div>';
-            }
-        },
-        navigation: {
-            nextEl: '.col_arrows .right',
-            prevEl: '.col_arrows .left',
-        },
-        on: {
-            slideChange: function () {
-                var idx = this.activeIndex;
-
-                if (idx != 0 && idx != length) $.fn.fullpage.setAllowScrolling(false);
-                if (length == 1 && idx == 0) $.fn.fullpage.setAllowScrolling(false);
-            },
-            slideChangeTransitionEnd: function () {
-                var idx = this.activeIndex;
-                if (idx == 0 || idx >= length - 1) $.fn.fullpage.setAllowScrolling(true);
-            },
-        },
-    });
-
 
     $('.side_nav li').on('click', function () {
         $(this).addClass('on').siblings().removeClass('on')
@@ -169,4 +167,5 @@ $(function () {
             e.preventDefault();
         }
     });
+
 });

@@ -17,19 +17,16 @@
     <title>BLOOMS</title>
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/jquery.fullpage.min.css">
+    <link rel="stylesheet" href="./css/fullpage.css">
     <link rel="stylesheet" href="./css/slick.css">
-    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./css/style.css?ver=2.1">
+    <link rel="stylesheet" href="./css/style.css?ver=2.5">
 
     <script src="./js/jquery-1.12.4.min.js"></script>
-    <script src="./js/jquery.fullpage.min.js"></script>
+    <script src="./js/fullpage.js"></script>
     <script src="./js/scrolloverflow.min.js"></script>
     <script src="./js/slick.min.js"></script>
-    <script src="./js/swiper-bundle.min.js"></script>
 
-
-    <script src="./js/custom.js?ver=2.1" defer></script>
+    <script src="./js/custom.js?ver=2.5" defer></script>
 </head>
 
 <body>
@@ -82,7 +79,34 @@
                 </span>
             </div>
         </header>
-        <div class="_fullpage">
+
+        <aside class="side">
+            <ul class="side_serv">
+                <li class="search">
+                    <a href="">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                    </a>
+                </li>
+                <li class="login">
+                    <a href="">
+                        <span class="material-symbols-outlined">
+                            person
+                        </span>
+                    </a>
+                </li>
+                <li class="cart">
+                    <a href="">
+                        <span class="material-symbols-outlined">
+                            shopping_cart
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="_fullpage" id="fullpage">
             <!-- 01 mainVisual -->
             <section class="main_visual section">
                 <div class="main_slide">
@@ -128,12 +152,12 @@
                 <ul class="mv_arrow">
                     <li class="left">
                         <span class="material-symbols-outlined">
-                            navigate_before
+                            keyboard_arrow_up
                         </span>
                     </li>
                     <li class="right">
                         <span class="material-symbols-outlined">
-                            navigate_next
+                            keyboard_arrow_down
                         </span>
                     </li>
                 </ul>
@@ -280,144 +304,138 @@
             </section>
 
             <!-- 04 현재 인기있는 콜렉션 리스트 -->
-            <section class="main_collection section">
-                <div class="swiper collection_slide">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide theme th1" data-swiper-parallax='45%'>
-                            <div class="page_num">01</div>
-                            <div class="txt_box">
-                                <h3>Jane COLLECTION</h3>
-                                <p>The Jane Collection is made up of lots of interesting greenery, with a variety of
-                                    shapes and textures, including eucalyptus leaves, thistle, and string of pearl.
-                                    The
-                                    flowers are all white in color and feature roses and peonies. The design and
-                                    style
-                                    of this collection is really modern and natural, while the color palette keeps
-                                    it
-                                    timeless and classic. A true beauty!
-                                </p>
-                                <a href="">VIEW MORE</a>
-                            </div>
-                            <div class="sub_collection">
-                                <figure>
-                                    <div class="img_box">
-                                        <img src="./images/col_J01.jpg" alt="JANE GRAND CENTERPIECE">
-                                    </div>
-                                    <figcaption>
-                                        <strong>JANE GRAND CENTERPIECE</strong>
-                                    </figcaption>
-                                </figure>
-                                <figure>
-                                    <div class="img_box">
-                                        <img src="./images/col_J02.jpg" alt="JANE BRIDAL BOUQUET (HAND-TIED)">
-                                    </div>
-                                    <figcaption>
-                                        <strong>JANE BRIDAL BOUQUET (HAND-TIED)</strong>
-                                    </figcaption>
-                                </figure>
-                                <figure>
-                                    <div class="img_box">
-                                        <img src="./images/col_J03.jpg" alt="JANE AISLE MARKER">
-                                    </div>
-                                    <figcaption>
-                                        <strong>JANE AISLE MARKER</strong>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="swiper-slide theme th2" data-swiper-parallax='45%'>
-                            <div class="page_num">02</div>
-                            <div class="txt_box">
-                                <h3>TAYLOR COLLECTION</h3>
-                                <p>The Taylor Collection is made up of gorgeous antique beige peonies, lavender
-                                    scabiosa, and a variety of ivory colored roses. You'll find hints of lavender among
-                                    the lush silver dollar eucalyptus and lambs ear greenery. This airy, romantic
-                                    collection is perfect for the modern bride looking for on-trend, yet timeless
-                                    wedding flowers.
-                                </p>
-                                <a href="">VIEW MORE</a>
-                            </div>
-                            <div class="sub_collection">
-                                <figure>
-                                    <div class="img_box">
-                                        <img src="./images/col_T01.jpg" alt="TAYLOR BRIDAL BOUQUET (HAND-TIED)">
-                                    </div>
-                                    <figcaption>
-                                        <strong>TAYLOR BRIDAL BOUQUET (HAND-TIED)</strong>
-                                    </figcaption>
-                                </figure>
-                                <figure>
-                                    <div class="img_box">
-                                        <img src="./images/col_T02.jpg" alt="TAYLOR GARLAND">
-                                    </div>
-                                    <figcaption>
-                                        <strong>TAYLOR GARLAND</strong>
-                                    </figcaption>
-                                </figure>
-                                <figure>
-                                    <div class="img_box">
-                                        <img src="./images/col_T03.jpg" alt="TAYLOR FLORAL COMB">
-                                    </div>
-                                    <figcaption>
-                                        <strong>TAYLOR FLORAL COMB</strong>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="swiper-slide theme th3" data-swiper-parallax='45%'>
-                            <div class="page_num">03</div>
-                            <div class="txt_box">
-                                <h3>MILLIE COLLECTION</h3>
-                                <p>The Millie is a soft and simple hand-tied silk floral collection. Featuring a mix of
-                                    garden florals accented with light greenery. The collection includes shades of light
-                                    blue, periwinkle blue, and creamy whites. Butterfly hydrangeas, lilac, English
-                                    roses, and delphinium are used to create this collection of English garden-inspired
-                                    florals. A timeless and romantic collection, perfect for a backyard wedding or a
-                                    ballroom affair.
-                                </p>
-                                <a href="">VIEW MORE</a>
-                            </div>
-                            <div class="sub_collection">
-                                <figure>
-                                    <div class="img_box">
-                                        <img src="./images/col_M01.jpg" alt="MILLIE BRIDAL BOUQUET (GARDEN-CUT)">
-                                    </div>
-                                    <figcaption>
-                                        <strong>MILLIE BRIDAL BOUQUET (GARDEN-CUT)</strong>
-                                    </figcaption>
-                                </figure>
-                                <figure>
-                                    <div class="img_box">
-                                        <img src="./images/col_M02.jpg" alt="MILLIE CAKE CLUSTER">
-                                    </div>
-                                    <figcaption>
-                                        <strong>MILLIE CAKE CLUSTER</strong>
-                                    </figcaption>
-                                </figure>
-                                <figure>
-                                    <div class="img_box">
-                                        <img src="./images/col_M03.jpg" alt="MILLIE LARGE CENTERPIECE">
-                                    </div>
-                                    <figcaption>
-                                        <strong>MILLIE LARGE CENTERPIECE</strong>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
+            <section class="main_collection section" id="slide">
+                <div class="slide theme th1">
+                    <div class="page_num">01</div>
+                    <div class="txt_box">
+                        <h3>Jane COLLECTION</h3>
+                        <p>The Jane Collection is made up of lots of interesting greenery, with a variety of
+                            shapes and textures, including eucalyptus leaves, thistle, and string of pearl.
+                            The
+                            flowers are all white in color and feature roses and peonies. The design and
+                            style
+                            of this collection is really modern and natural, while the color palette keeps
+                            it
+                            timeless and classic. A true beauty!
+                        </p>
+                        <a href="">VIEW MORE</a>
                     </div>
-                    <div class="collection_page" aria-hidden="true">
+                    <div class="sub_collection">
+                        <figure>
+                            <div class="img_box">
+                                <img src="./images/col_J01.jpg" alt="JANE GRAND CENTERPIECE">
+                            </div>
+                            <figcaption>
+                                <strong>JANE GRAND CENTERPIECE</strong>
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <div class="img_box">
+                                <img src="./images/col_J02.jpg" alt="JANE BRIDAL BOUQUET (HAND-TIED)">
+                            </div>
+                            <figcaption>
+                                <strong>JANE BRIDAL BOUQUET (HAND-TIED)</strong>
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <div class="img_box">
+                                <img src="./images/col_J03.jpg" alt="JANE AISLE MARKER">
+                            </div>
+                            <figcaption>
+                                <strong>JANE AISLE MARKER</strong>
+                            </figcaption>
+                        </figure>
                     </div>
-                    <div class="col_arrows">
-                        <div class="left">
-                            <span class="material-symbols-outlined">
-                                navigate_before
-                            </span>
-                        </div>
-                        <div class="right">
-                            <span class="material-symbols-outlined">
-                                navigate_next
-                            </span>
-                        </div>
+                </div>
+                <div class="slide theme th2">
+                    <div class="page_num">02</div>
+                    <div class="txt_box">
+                        <h3>TAYLOR COLLECTION</h3>
+                        <p>The Taylor Collection is made up of gorgeous antique beige peonies, lavender
+                            scabiosa, and a variety of ivory colored roses. You'll find hints of lavender among
+                            the lush silver dollar eucalyptus and lambs ear greenery. This airy, romantic
+                            collection is perfect for the modern bride looking for on-trend, yet timeless
+                            wedding flowers.
+                        </p>
+                        <a href="">VIEW MORE</a>
+                    </div>
+                    <div class="sub_collection">
+                        <figure>
+                            <div class="img_box">
+                                <img src="./images/col_T01.jpg" alt="TAYLOR BRIDAL BOUQUET (HAND-TIED)">
+                            </div>
+                            <figcaption>
+                                <strong>TAYLOR BRIDAL BOUQUET (HAND-TIED)</strong>
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <div class="img_box">
+                                <img src="./images/col_T02.jpg" alt="TAYLOR GARLAND">
+                            </div>
+                            <figcaption>
+                                <strong>TAYLOR GARLAND</strong>
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <div class="img_box">
+                                <img src="./images/col_T03.jpg" alt="TAYLOR FLORAL COMB">
+                            </div>
+                            <figcaption>
+                                <strong>TAYLOR FLORAL COMB</strong>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="slide theme th3">
+                    <div class="page_num">03</div>
+                    <div class="txt_box">
+                        <h3>MILLIE COLLECTION</h3>
+                        <p>The Millie is a soft and simple hand-tied silk floral collection. Featuring a mix of
+                            garden florals accented with light greenery. The collection includes shades of light
+                            blue, periwinkle blue, and creamy whites. Butterfly hydrangeas, lilac, English
+                            roses, and delphinium are used to create this collection of English garden-inspired
+                            florals. A timeless and romantic collection, perfect for a backyard wedding or a
+                            ballroom affair.
+                        </p>
+                        <a href="">VIEW MORE</a>
+                    </div>
+                    <div class="sub_collection">
+                        <figure>
+                            <div class="img_box">
+                                <img src="./images/col_M01.jpg" alt="MILLIE BRIDAL BOUQUET (GARDEN-CUT)">
+                            </div>
+                            <figcaption>
+                                <strong>MILLIE BRIDAL BOUQUET (GARDEN-CUT)</strong>
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <div class="img_box">
+                                <img src="./images/col_M02.jpg" alt="MILLIE CAKE CLUSTER">
+                            </div>
+                            <figcaption>
+                                <strong>MILLIE CAKE CLUSTER</strong>
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <div class="img_box">
+                                <img src="./images/col_M03.jpg" alt="MILLIE LARGE CENTERPIECE">
+                            </div>
+                            <figcaption>
+                                <strong>MILLIE LARGE CENTERPIECE</strong>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col_arrows">
+                    <div class="left">
+                        <span class="material-symbols-outlined">
+                            navigate_before
+                        </span>
+                    </div>
+                    <div class="right">
+                        <span class="material-symbols-outlined">
+                            navigate_next
+                        </span>
                     </div>
                 </div>
             </section>
@@ -472,30 +490,8 @@
                 <li><a href="#sec3">Trend Now</a></li>
                 <li><a href="#foot">CONTACT US</a></li>
             </ul>
-            <ul class="side_serv">
-                <li class="search">
-                    <a href="">
-                        <span class="material-symbols-outlined">
-                            search
-                        </span>
-                    </a>
-                </li>
-                <li class="login">
-                    <a href="">
-                        <span class="material-symbols-outlined">
-                            person
-                        </span>
-                    </a>
-                </li>
-                <li class="cart">
-                    <a href="">
-                        <span class="material-symbols-outlined">
-                            shopping_cart
-                        </span>
-                    </a>
-                </li>
-            </ul>
         </aside>
+
     </div>
 </body>
 
