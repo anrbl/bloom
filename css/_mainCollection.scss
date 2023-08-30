@@ -215,6 +215,35 @@
 
     }
 
+    .col_pagenum {
+        position: absolute;
+        top: 150px;
+        left: 300px;
+        z-index: 990;
+        width: auto;
+        height: 80px;
+
+        display: flex;
+        gap: 30px;
+
+        li {
+            a {
+                display: block;
+                font-size: 14px;
+                font-weight: 300;
+                color: $c-w;
+                letter-spacing: 2px;
+                opacity: 0.5;
+            }
+
+            &.on {
+                a {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
     .col_arrows {
         position: absolute;
         bottom: 30px;

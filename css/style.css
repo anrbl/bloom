@@ -1256,6 +1256,27 @@ body {
 .main_collection .sub_collection figure:hover {
   transform: translate(0, -10px);
 }
+.main_collection .col_pagenum {
+  position: absolute;
+  top: 150px;
+  left: 300px;
+  z-index: 990;
+  width: auto;
+  height: 80px;
+  display: flex;
+  gap: 30px;
+}
+.main_collection .col_pagenum li a {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 2px;
+  opacity: 0.5;
+}
+.main_collection .col_pagenum li.on a {
+  opacity: 1;
+}
 .main_collection .col_arrows {
   position: absolute;
   bottom: 30px;

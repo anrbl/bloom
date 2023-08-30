@@ -28,21 +28,14 @@ $(function () {
             sEc.eq(destination.index).addClass("on").siblings().removeClass("on");
         },
         onLeave: function (origin, destination, direction, trigger, idx, nidx) {
-            console.log(idx, nidx)
 
-            if (origin.index == 0 && direction == 'down') {
+            if (destination.index == 1) {
                 $('.header').addClass('on')
                 $('.side').addClass('on')
-            } else if (origin.index == 1 && direction == 'down') {
+            } else if (destination.index == 2) {
                 $('.header').addClass('on')
                 $('.side').addClass('on')
-            } else if (origin.index == 2 && direction == 'up') {
-                $('.header').addClass('on')
-                $('.side').addClass('on')
-            } else if (origin.index == 3 && direction == 'down') {
-                $('.header').addClass('on')
-                $('.side').removeClass('on')
-            } else if (origin.index == 3 && direction == 'up') {
+            } else if (destination.index == 4) {
                 $('.header').addClass('on')
                 $('.side').removeClass('on')
             } else {
